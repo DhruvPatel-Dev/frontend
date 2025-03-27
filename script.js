@@ -8,7 +8,7 @@ async function login() {
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
 
-    const response = await fetch('http://localhost:3000/api/v1/user/login', {
+    const response = await fetch('https://chat-app-backend-api-88av.onrender.com/api/v1/user/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -31,7 +31,7 @@ async function signup() {
     const mobile = document.getElementById('signupMobile').value;
     const password = document.getElementById('signupPassword').value;
 
-    const response = await fetch('http://localhost:3000/api/v1/user', {
+    const response = await fetch('https://chat-app-backend-api-88av.onrender.com/api/v1/user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, mobile, password }),

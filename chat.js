@@ -1,5 +1,5 @@
 
-const socket = io('http://localhost:3000');
+const socket = io('https://chat-app-backend-api-88av.onrender.com');
 socket.on('connect', () => console.log('✅ WebSocket connected:', socket.id));
 socket.on('connect_error', (err) => console.error('❌ WebSocket error:', err.message));
 
@@ -30,14 +30,14 @@ async function loadChat() {
     }
    
     // Fetch user details (name)
-    const userResponse = await fetch(`http://localhost:3000/api/v1/user/get/${receiverId}`, {
+    const userResponse = await fetch(`https://chat-app-backend-api-88av.onrender.com/api/v1/user/get/${receiverId}`, {
         headers: { Authorization: token },
     });
     const user = await userResponse.json();
     document.getElementById('chatUserName').innerText = `Chat with ${user.data.name}`;
 
     // Fetch messages
-    const chatResponse = await fetch(`http://localhost:3000/api/v1/msg/get/${receiverId}`, {
+    const chatResponse = await fetch(`https://chat-app-backend-api-88av.onrender.com/api/v1/msg/get/${receiverId}`, {
         headers: { Authorization: token },
     });
     const messages = await chatResponse.json();
@@ -56,7 +56,7 @@ async function sendMessage() {
 
     if (!content) return;
 
-    await fetch('http://localhost:3000/api/v1/msg', {
+    await fetch('https://chat-app-backend-api-88av.onrender.com/api/v1/msg', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

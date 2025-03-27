@@ -7,7 +7,7 @@ async function fetchUsers() {
         return;
     }
 
-    const response = await fetch("http://localhost:3000/api/v1/user", {
+    const response = await fetch("https://chat-app-backend-api-88av.onrender.com/api/v1/user", {
         headers: { "Authorization":token }
     });
 
